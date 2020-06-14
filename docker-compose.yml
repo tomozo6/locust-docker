@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  master:
+    image: tomozo6/locust:0.0.2
+    ports:
+     - "8089:8089"
+     - "5557:5557"
+     - "5558:5558"
+    command: -f /scripts/locustfile.py --master
+
+  worker:
+    image: tomozo6/locust:0.0.2
+    volumes:
+    command: -f /scripts/locustfile.py --worker --master-host master
