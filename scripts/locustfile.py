@@ -6,7 +6,11 @@ class QuickstartUser(HttpUser):
 
     @task
     def index_page(self):
-        self.client.get("/v1/weather/forecasts/35.584558,139.736206?lang=ja")
+        url_base_path = "/v1/weather/forecasts"
+        lat = "35.{}".format(random.randint(10, 100))
+        lng = "139.{}".format(random.randint(10, 100))
+        url = f"{end_point}/{lat},{lng}?lang=ja"
+        self.client.get(url)
 #        self.client.get("/world")
 
 #    @task(3)
