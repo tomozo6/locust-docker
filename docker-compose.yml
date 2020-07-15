@@ -11,5 +11,4 @@ services:
 
   worker:
     image: tomozo6/locust:0.0.2
-    volumes:
     command: -f /scripts/locustfile.py --worker --master-host master

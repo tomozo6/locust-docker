@@ -6,12 +6,9 @@ class QuickstartUser(HttpUser):
 
     @task
     def index_page(self):
-        url_base_path = "/v1/weather/forecasts"
         lat = "35.{}".format(random.randint(10, 100))
         lng = "139.{}".format(random.randint(10, 100))
-        url = f"{end_point}/{lat},{lng}?lang=ja"
-        self.client.get(url)
-#        self.client.get("/world")
+        self.client.get("/v1/weather/forecasts/{0},{1}?lang=ja".format(lat, lng))
 
 #    @task(3)
 #    def view_item(self):

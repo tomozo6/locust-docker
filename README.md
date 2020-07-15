@@ -15,3 +15,4 @@ $ docker push tomozo6/locust:0.0.1
 ```
 $ docker-compose up
 ```
+ブラウザで localhost:8089 にアクセス。
